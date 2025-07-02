@@ -1,0 +1,28 @@
+#D'abord, cherchez l'emplacement de votre docker desktop en faisant cette commande dans le terminal :
+sudo find / -name "docker-desktop"
+#Copiez le résultat que vous metterez dans le chemin "exec" du programme
+ 
+#Ensuite, créez le répertoire ou nous stockerons le programme (s'il n'est pas dejà créé) :
+mkdir -p ~/.config/autostart
+ 
+#Créez ensuite votre fichier contenant le programme avec la commande :
+nano ~/.config/autostart/docker-desktop.desktop
+ 
+#Ajoutez ce contenu a votre fichier :
+[Desktop Entry]
+Type=Application
+Name=Docker Desktop
+Exec={VOTRE CHEMIN} #par exemple ˜/opt/docker-desktop/bin/docker-desktop.desktop
+Icon=docker
+Comment=Docker Desktop
+X-GNOME-Autostart-enabled=true
+ 
+#Pour sauvegarder et quitter, faites Ctrl+X et Y
+ 
+#Pour vérifier qu'il est bien créé, faite ensuite :
+ls ˜/.config/autostart/
+ 
+#Finalement, redémarrez votre serveur avec :
+sudo reboot
+
+credit : Ypsol
